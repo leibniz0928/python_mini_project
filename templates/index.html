@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나만의 일기장</title>
+    <!-- Google Fonts for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🗂️나의 일기장🗂️</h1>
+        </header>
+
+        {% if entries %}
+            <div class="grid-container">
+                {% for entry in entries %}
+                <div class="diary-card" style="--mood-color: {{ entry.mood_color }};">
+                    <div class="card-header">
+                        <span class="date">{{ entry.date }}</span>
+                        <div class="mood-indicator"></div>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="title">{{ entry.title }}</h2>
+                        <p class="content">{{ entry.content }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="comment">"{{ entry.comment }}"</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="empty-state">
+                <p>아직 작성된 일기가 없습니다.<br>오늘 하루는 어땠나요?</p>
+            </div>
+        {% endif %}
+    </div>
+    <script src="../static/script.js"></script>
+</body>
+</html>
