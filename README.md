@@ -1,4 +1,4 @@
-#  AI 나만의 일기장 (AI Mood Diary)
+#  AI 나만의 일기장 (AI My Diary)
 
 Google Gemini API를 활용하여 작성한 일기를 분석하고, 감정에 맞는 색상과 코멘트를 생성해주는 나만의 일기장 프로젝트. 'Tkinter'에서 일기를 작성하고, 'Flask'를 통해 아름다운 카드 형태로 기록을 확인 가능함.
 
